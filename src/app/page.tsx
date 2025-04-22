@@ -162,7 +162,7 @@ const Home = () => {
                             ${
                               dietaryRestrictions.includes(restriction)
                                 ? "bg-purple-600 text-white shadow-md"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
                             }`}
               >
                 <input
@@ -178,7 +178,7 @@ const Home = () => {
           <div className="flex items-center">
             <input
               type="text"
-              className="flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
+              className="flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-800 placeholder-gray-500 bg-white"
               placeholder="Add custom restriction (e.g., low sodium)"
               value={customRestriction}
               onChange={(e) => setCustomRestriction(e.target.value)}
@@ -204,7 +204,7 @@ const Home = () => {
           <div className="flex items-center mb-4">
             <input
               type="text"
-              className="flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
+              className="flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-800 placeholder-gray-500 bg-white"
               placeholder="What's in your pantry? (e.g., chicken, tomatoes, pasta)"
               value={ingredientInput}
               onChange={handleIngredientInputChange}
@@ -225,12 +225,12 @@ const Home = () => {
                 <span
                   key={ingredient}
                   className="inline-flex items-center rounded-full bg-yellow-100 px-4 py-1 text-sm font-medium text-gray-800
-                             shadow-sm border border-yellow-200"
+                             shadow-sm border border-yellow-300"
                 >
                   {ingredient}
                   <button
                     type="button"
-                    className="ml-2 h-6 w-6 rounded-full inline-flex items-center justify-center text-gray-500 hover:text-gray-700
+                    className="ml-2 h-6 w-6 rounded-full inline-flex items-center justify-center text-gray-700 hover:text-gray-900
                                focus:outline-none focus:ring-2 focus:ring-purple-500"
                     onClick={() => handleRemoveIngredient(ingredient)}
                   >

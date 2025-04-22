@@ -79,21 +79,21 @@ const Home = () => {
         await new Promise((resolve) => setTimeout(resolve, 3000));
       }
 
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER}/recipes/recommend`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            dietary_restrictions:
-              dietaryRestrictions.length > 0 ? dietaryRestrictions : null,
-            available_ingredients:
-              availableIngredients.length > 0 ? availableIngredients : null,
-          }),
-        }
-      );
+      const serverUrl =
+        process.env.NEXT_PUBLIC_SERVER || "https://recipewise.onrender.com";
+
+      const response = await fetch(`${serverUrl}/recipes/recommend`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          dietary_restrictions:
+            dietaryRestrictions.length > 0 ? dietaryRestrictions : null,
+          available_ingredients:
+            availableIngredients.length > 0 ? availableIngredients : null,
+        }),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
